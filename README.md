@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# 산술 계산 연습하기 앱
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개요
 
-## Available Scripts
+- 현대 사회에 디지털 치매가 발생하는 것 처럼 산술 계산을 안하게 됨에 따라 더하기, 빼기, 곱하기, 나누기 등의 산술 계산을 점점 계산기에 의지하면서 간단한 암산조차 익숙하지 않은 현대인들을 위해서 만들기 시작 함
 
-In the project directory, you can run:
+## 개발 스탭
 
-### `npm start`
+### 1. 형태 잡기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **정보 표기** (상단)
+  - 게임 회차, 정답/오답 카운팅, 응답 평균 시간
+- **숫자 표기** (중단)
+  - 연산 숫자 및 게임
+- **키패드** (하단)
+  - 숫자 패드 및 지우기, 제출 버튼
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 2. 계산 문제 발생 및 결과 확인
 
-### `npm test`
+- 랜덤 숫자 발생 및 정답 도출
+- 나누기는 게임에 추가 할 지 고민 중
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Todo List
 
-### `npm run build`
+- ~~레이아웃~~
+- ~~문제 출제~~
+- ~~키패드 동작~~
+- 문제 풀이 동작
+- 정보 창
+- 코드 정리
+- 스타일 다듬기
+- 편의(설정) 기능
+  - 키패드 숫자 순서 변경
+  - 정답 입력 순서 변경 (앞자리부터, 뒷자리부터)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 3. 퍼블리싱
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 스타일링
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 4. 배포
 
-### `npm run eject`
+- 미정
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 기술 스택
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. react(+typescript)
+2. scss
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 추가 하고 싶은 것
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. sqlLite
 
-## Learn More
+- 기록 저장
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. module component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 다양한 스타일링 해보기
+
+# 마치며
+
+- 프로젝트 완성 후 작성 예정
