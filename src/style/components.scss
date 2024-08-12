@@ -1,0 +1,13 @@
+.keypad {
+  height: 80px;
+  width: 30%;
+  cursor: pointer;
+  font-size: 30px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 500;
+  font-style: normal;
+  border: 0;
+  &.full {
+    width: 90%;
+  }
+}

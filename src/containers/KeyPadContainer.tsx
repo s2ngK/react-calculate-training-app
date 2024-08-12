@@ -1,8 +1,39 @@
-import { useState } from 'react';
+import { Controls } from '../App';
+import KeyPad from '../components/KeyPad';
+import '../style/containers.scss';
 
-const KeyPadContainer = () => {
-  const number2 = useState(1);
-  return <>hello im KeyPadContainer {number2}</>;
+const KeyPadContainer = ({ controls }: { controls: Controls }) => {
+  const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const reverseNumArr = [7, 8, 9, 4, 5, 6, 1, 2, 3];
+
+  const getPadArr = (numberArr: number[]) => {
+    return numberArr.map((num) => {
+      const numStr = String(num);
+      return (
+        <KeyPad
+          key={num}
+          content={numStr}
+          onClick={() => controls.type(numStr)}
+        />
+      );
+    });
+  };
+
+  const numPadArr = getPadArr(reverseNumArr);
+
+  return (
+    <div className='keypad-container'>
+      {numPadArr}
+      <KeyPad content={'cls'} onClick={() => controls.clear()} />
+      <KeyPad content={'0'} onClick={() => controls.type('0')} />
+      <KeyPad content={'del'} onClick={() => controls.delete()} />
+      <KeyPad
+        addClass={'full'}
+        content={'next'}
+        onClick={() => controls.next()}
+      />
+    </div>
+  );
 };
 
 export default KeyPadContainer;
