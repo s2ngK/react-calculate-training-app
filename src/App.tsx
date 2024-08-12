@@ -6,10 +6,10 @@ import { Symbol } from './containers/QuestionContainer';
 import SolutionContainer from './containers/SolutionContainer';
 
 export interface Controls {
-  clear: Function;
-  next: Function;
-  delete: Function;
-  type: Function;
+  clear: () => void;
+  next: () => void;
+  delete: () => void;
+  type: (value: string) => void;
 }
 
 function App() {

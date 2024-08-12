@@ -7,9 +7,9 @@ const KeyPad = ({
 }: {
   addClass?: string;
   content: string;
-  onClick?: Function;
+  onClick?: () => void;
 }) => {
-  const classNames = (): string => {
+  const classNames = () => {
     return addClass ? `keypad ${addClass}` : 'keypad';
   };
   const clickHandle = () => {
