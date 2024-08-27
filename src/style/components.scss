@@ -10,4 +10,16 @@
   &.full {
     width: 90%;
   }
+  &.start {
+    background-color: green;
+  }
+  &.next {
+    background-color: chartreuse;
+  }
+  &.clear {
+    background-color: darkorange;
+  }
+  &.delete {
+    background-color: indianred;
+  }
 }

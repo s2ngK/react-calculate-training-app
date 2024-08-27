@@ -1,9 +1,9 @@
-import { Controls } from '../App';
+import { Controls } from '../interfaces';
 import KeyPad from '../components/KeyPad';
 import '../style/containers.scss';
 
 const KeyPadContainer = ({ controls }: { controls: Controls }) => {
-  const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  // const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   const reverseNumArr = [7, 8, 9, 4, 5, 6, 1, 2, 3];
 
   const getPadArr = (numberArr: number[]) => {
@@ -24,11 +24,19 @@ const KeyPadContainer = ({ controls }: { controls: Controls }) => {
   return (
     <div className='keypad-container'>
       {numPadArr}
-      <KeyPad content={'cls'} onClick={() => controls.clear()} />
-      <KeyPad content={'0'} onClick={() => controls.type('0')} />
-      <KeyPad content={'del'} onClick={() => controls.delete()} />
       <KeyPad
-        addClass={'full'}
+        addClass={'clear'}
+        content={'cls'}
+        onClick={() => controls.clear()}
+      />
+      <KeyPad content={'0'} onClick={() => controls.type('0')} />
+      <KeyPad
+        addClass={'delete'}
+        content={'del'}
+        onClick={() => controls.delete()}
+      />
+      <KeyPad
+        addClass={'full start'}
         content={'next'}
         onClick={() => controls.next()}
       />

@@ -1,16 +1,11 @@
-import { useState } from 'react';
-import './App.scss';
+import { useState, useEffect } from 'react';
+import { Controls } from './interfaces';
+import * as util from './utils';
+import { Symbol } from './containers/QuestionContainer';
 import KeyPadContainer from './containers/KeyPadContainer';
 import QuestionContainer from './containers/QuestionContainer';
-import { Symbol } from './containers/QuestionContainer';
 import SolutionContainer from './containers/SolutionContainer';
-
-export interface Controls {
-  clear: () => void;
-  next: () => void;
-  delete: () => void;
-  type: (value: string) => void;
-}
+import './App.scss';
 
 function App() {
   const [num1, setNum1] = useState<number>(0);
@@ -18,29 +13,17 @@ function App() {
   const [symbol, setSymbol] = useState<Symbol>('+');
   const [solution, setSolution] = useState<string>('');
 
-  const getRandInt = (digit: number): number => {
-    const reqDigit = 10 ** digit;
-    const rand = Math.floor(Math.random() * reqDigit);
-    const randDigits = Math.floor(Math.log10(rand)) + 1;
-    if (randDigits < digit) {
-      return getRandInt(digit);
-    }
-    return rand;
-  };
-
-  const getSymbol = (ran: number) => {
-    if (ran < 1) return '+';
-    else if (ran < 2) return '-';
-    else return 'x';
-  };
+  useEffect(() => {
+    createQuestion();
+  }, []);
 
   const createQuestion = () => {
     const symbolRan = Math.floor(Math.random() * 3);
     let digits = 2;
     if (symbolRan < 2) digits = 5; // +, - 자리수 증가
-    const num1 = getRandInt(digits);
-    const num2 = getRandInt(digits);
-    setSymbol(getSymbol(symbolRan));
+    const num1 = util.getRandInt(digits);
+    const num2 = util.getRandInt(digits);
+    setSymbol(util.getSymbol(symbolRan));
     setNum1(num1);
     setNum2(num2);
     if (symbolRan === 1 && num2 > num1) {
